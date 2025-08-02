@@ -48,7 +48,7 @@ const products: Product[] = [
   {
     id: "fabric-tote",
     name: "Large Fabric Grocery Tote",
-    description: "Large fabric grocery tote with a design by Chloe screen printed on the side. Perfect for shopping, carrying books, or everyday use with a beautiful custom design!",
+    description: "Large fabric grocery tote with a design by Chloe screen printed on one side. Perfect for shopping, carrying books, or everyday use with a beautiful custom design that will inspire you and everyone you see!",
     price: 25,
     creator: "Chloe",
     age: "15",
@@ -123,7 +123,7 @@ export default function Home() {
     }
 
     const orderData = {
-      items: orderSummary.map(product => ({
+      items: products.map(product => ({
         id: product.id,
         name: product.name,
         price: product.price,
@@ -174,54 +174,14 @@ export default function Home() {
       <section className="text-center pt-20 pb-8 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="py-12">
-            <div className="blackboard-container mb-12">
-              <h1 className="fredericka-title text-6xl md:text-8xl font-bold leading-tight">
-                Miller Academy Fundraiser
-              </h1>
-            </div>
-            <div className="floral-divider"></div>
-            
-            <div className="floral-header">
-              <div className="floral-accent">
-                <svg width="40" height="40" viewBox="0 0 40 40">
-                  {/* Coral flower inspired by towel pattern */}
-                  <circle cx="20" cy="20" r="8" fill="#F87171" opacity="0.8"/>
-                  <circle cx="16" cy="16" r="3" fill="#EF4444"/>
-                  <circle cx="24" cy="16" r="3" fill="#EF4444"/>
-                  <circle cx="16" cy="24" r="3" fill="#EF4444"/>
-                  <circle cx="24" cy="24" r="3" fill="#EF4444"/>
-                  <circle cx="20" cy="20" r="2" fill="#DC2626"/>
-                  {/* Navy leaves */}
-                  <ellipse cx="12" cy="20" rx="3" ry="6" fill="#1e3a8a" transform="rotate(-30 12 20)"/>
-                  <ellipse cx="28" cy="20" rx="3" ry="6" fill="#1e3a8a" transform="rotate(30 28 20)"/>
-                  <ellipse cx="20" cy="10" rx="6" ry="3" fill="#1e3a8a" transform="rotate(0 20 10)"/>
-                </svg>
-              </div>
-              
-              <div className="floral-header-text">
-                <p className="text-3xl text-gray-800 font-semibold tracking-wide">
-                  We will be selling items until August 16th
-                </p>
-              </div>
-              
-              <div className="floral-accent">
-                <svg width="40" height="40" viewBox="0 0 40 40">
-                  {/* Coral flower inspired by towel pattern */}
-                  <circle cx="20" cy="20" r="8" fill="#F87171" opacity="0.8"/>
-                  <circle cx="16" cy="16" r="3" fill="#EF4444"/>
-                  <circle cx="24" cy="16" r="3" fill="#EF4444"/>
-                  <circle cx="16" cy="24" r="3" fill="#EF4444"/>
-                  <circle cx="24" cy="24" r="3" fill="#EF4444"/>
-                  <circle cx="20" cy="20" r="2" fill="#DC2626"/>
-                  {/* Navy leaves */}
-                  <ellipse cx="12" cy="20" rx="3" ry="6" fill="#1e3a8a" transform="rotate(-30 12 20)"/>
-                  <ellipse cx="28" cy="20" rx="3" ry="6" fill="#1e3a8a" transform="rotate(30 28 20)"/>
-                  <ellipse cx="20" cy="30" rx="6" ry="3" fill="#1e3a8a" transform="rotate(0 20 30)"/>
-                </svg>
-              </div>
-            </div>
-            
-            <div className="floral-divider"></div>
+            <Image
+              src="/header.png"
+              alt="Miller Academy Fundraiser - Taking orders until August 16, 2025"
+              width={500}
+              height={500}
+              className="mx-auto"
+              priority
+            />
           </div>
         </div>
       </section>
@@ -340,7 +300,7 @@ export default function Home() {
                 How will the funds be used?
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                All funds raised will directly support our educational goals by purchasing curriculum that encourages independent thinking, funding visits to museums and performances, and buying supplies for hands-on learning experiences that connect our daughters to others and the world around them.
+                All funds raised will directly support our educational goals by purchasing curriculum that encourages independent thinking, funding visits to museums and performances, and buying supplies for hands-on learning experiences that connect our daughters to others, knowledge, and the world around them.
               </p>
             </div>
 
@@ -358,7 +318,7 @@ export default function Home() {
                 What's the process?
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                Simply add items to your cart, go through the checkout process, and that loads your order on our end with your address and quantities. After you submit your order, you'll see QR codes to pay us via either Venmo or Zelle. It's that easy!
+                Simply add items to your cart, go through the checkout process, and that loads your order on our end with your address and quantities. After you submit your order, you'll see QR codes to pay us via either Venmo or Zelle. Click the QR code to make it bigger. It's that easy!
               </p>
             </div>
 
@@ -384,9 +344,9 @@ export default function Home() {
                     <strong className="text-gray-900">Each girl's favorite read aloud from this past year:</strong>
                   </p>
                   <ul className="mt-2 space-y-1 text-gray-700">
-                    <li>• <strong className="text-gray-900">Lydia:</strong> My Ántonia by Willa Cather - She enjoyed how the author added interesting details to the characters and plot.</li>
-                    <li>• <strong className="text-gray-900">Phoebe:</strong> The Gallery by Laura Marx Fitzgerald - She loved that it was about an empowered girl her age that was trying to fix things.</li>
-                    <li>• <strong className="text-gray-900">Chloe:</strong> Echo by Pam Muñoz Ryan - She liked how all of the stories were woven together.</li>
+                    <li>• <strong className="text-gray-900">Lydia:</strong> <em>My Ántonia</em> by Willa Cather - She enjoyed how the author added interesting details to the characters and plot.</li>
+                    <li>• <strong className="text-gray-900">Phoebe:</strong> <em>The Gallery</em> by Laura Marx Fitzgerald - She loved that it was about an empowered girl her age that was trying to fix things.</li>
+                    <li>• <strong className="text-gray-900">Chloe:</strong> <em>Echo</em> by Pam Muñoz Ryan - She liked how all of the stories were woven together.</li>
                   </ul>
                 </div>
               </div>
