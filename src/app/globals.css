@@ -22,62 +22,150 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Delius', cursive, Arial, Helvetica, sans-serif;
+  font-size: 18px;
 }
 
-/* Custom animations for the fundraiser page */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+/* Apply Delius font to all text elements */
+body, p, span, div, h2, h3, h4, h5, h6, li, label, input, textarea, button {
+  font-family: 'Delius', cursive, Arial, Helvetica, sans-serif;
 }
 
-@keyframes sparkle {
-  0%, 100% { opacity: 0; transform: scale(0); }
-  50% { opacity: 1; transform: scale(1); }
+/* Double Line Floral Dividers */
+.floral-divider {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
 }
 
-@keyframes rainbow {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
+.floral-divider::before {
+  content: '';
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  top: 50%;
+  height: 2px;
+  background: #1e3a8a;
+  transform: translateY(-3px);
+  z-index: 1;
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+.floral-divider::after {
+  content: '';
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  top: 50%;
+  height: 1px;
+  background: #1e3a8a;
+  transform: translateY(3px);
+  z-index: 1;
 }
 
-.animate-sparkle {
-  animation: sparkle 2s ease-in-out infinite;
+/* Floral Header Container */
+.floral-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
 }
 
-.animate-rainbow {
-  animation: rainbow 3s linear infinite;
+.floral-header-text {
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
-/* Gradient text animation */
-.gradient-text {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+.floral-accent {
+  flex-shrink: 0;
+}
+
+/* SVG Leaf Divider */
+.leaf-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 2rem 0;
+  height: 40px;
+}
+
+.leaf-svg {
+  width: 24px;
+  height: 24px;
+}
+
+
+
+/* Artistic banner styles */
+.artistic-title {
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.fredericka-title {
+  font-family: 'Fredericka the Great', cursive;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 10;
 }
 
-/* Hover effects for product cards */
-.product-card {
-  transition: all 0.3s ease;
+/* Blackboard container */
+.blackboard-container {
+  background: linear-gradient(135deg, #2d4a2d 0%, #1a3d1a 50%, #0f2a0f 100%);
+  border: 8px solid #8b4513;
+  border-radius: 12px;
+  box-shadow: 
+    inset 0 0 50px rgba(0,0,0,0.3),
+    0 8px 20px rgba(0,0,0,0.2);
+  position: relative;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 3rem 2rem;
 }
 
-.product-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+.blackboard-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.02) 1px, transparent 1px),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.02) 1px, transparent 1px),
+    radial-gradient(circle at 60% 20%, rgba(255,255,255,0.01) 2px, transparent 2px),
+    radial-gradient(circle at 30% 80%, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 100px 100px, 150px 150px, 200px 200px, 80px 80px;
+  border-radius: 4px;
+  pointer-events: none;
 }
+
+.blackboard-container::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
@@ -85,15 +173,15 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
+  background: #f8f9fa;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-  border-radius: 10px;
+  background: #d1d5db;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #764ba2 0%, #667eea 100%);
+  background: #9ca3af;
 }
